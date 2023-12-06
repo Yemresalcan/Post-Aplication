@@ -3,7 +3,9 @@ import HomePage from "./pages/HomePage.jsx";
 import CartPage from "./pages/CartPage.jsx";
 import BillPage from "./pages/BillPage.jsx";
 import CustomerPage from "./pages/CustomerPage.jsx";
-
+import StatisticPage from "./pages/StatisticPage.jsx";
+import Register from "./pages/auth/Register.jsx";
+import Login from "./pages/auth/Login.jsx";
 
 function App() {
   return (
@@ -15,7 +17,9 @@ function App() {
       <Route path="/cart" element={<CartPage />} />
       <Route path="/bills" element={<BillPage />} />
       <Route path="/customers" element={<CustomerPage />} />
-      
+      <Route path="/statistic" element={<StatisticPage />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/login" element={<Login />} />
     </Routes>
  
     </BrowserRouter>

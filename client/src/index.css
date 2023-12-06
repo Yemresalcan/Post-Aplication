@@ -9,6 +9,7 @@ body{
   margin: 0;
   font-family: 'Electrolize', sans-serif;
   overflow-x: hidden;
+  @apply bg-gray-50;
 }
 .ant-btn-primary{
   background-color: #1677ff;
