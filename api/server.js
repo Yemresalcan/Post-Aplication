@@ -1,8 +1,18 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
+const cors = require("cors");
 const port = 5000;
 const dotenv = require("dotenv");
+
+// Routes
+
+const categoryRoute = require("./routes/categories");
+const productRoute = require("./routes/product");
+const billRoute = require("./routes/bills");
+
+
+
 
 dotenv.config();
 
@@ -15,8 +25,14 @@ const connect = async () => {
     throw error;
   }
 };
+app.use(express.json());
+app.use(cors());
 
-app.get("/", (req, res) => res.send("Hello World!"));
+app.use("/api/categories",categoryRoute);
+app.use("/api/products",productRoute);
+app.use("/api/bills",billRoute);
+
+
 
 app.listen(port, () => {
   connect();
