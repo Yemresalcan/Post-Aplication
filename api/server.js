@@ -10,6 +10,8 @@ const dotenv = require("dotenv");
 const categoryRoute = require("./routes/categories");
 const productRoute = require("./routes/product");
 const billRoute = require("./routes/bills");
+const authRoute = require("./routes/auth");
+const userRoute = require("./routes/users");
 
 
 
@@ -31,6 +33,8 @@ app.use(cors());
 app.use("/api/categories",categoryRoute);
 app.use("/api/products",productRoute);
 app.use("/api/bills",billRoute);
+app.use("/api/auth",authRoute);
+app.use("/api/users",userRoute);
 
 
 
