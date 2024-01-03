@@ -23,6 +23,10 @@ body {
   font-family: "Electrolize", sans-serif;
 }
 
+.menu-link .anticon{
+  display: flex;
+  justify-content: center;
+}
 
 
 
