@@ -12,13 +12,19 @@ const productRoute = require("./routes/product.js");
 const billRoute = require("./routes/bills.js");
 const authRoute = require("./routes/auth.js");
 const userRoute = require("./routes/users.js");
+
 dotenv.config();
 const connect = async () => {
   try {
-    await mongoose.connect(process.env.MONGO_URI);
-    console.log("Connected to mongoDB");
+    await mongoose.connect(process.env.MONGO_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log("Connected to MongoDB And Ready Server  🚀🚀🚀");
   } catch (error) {
-    throw error;
+    console.error("MongoDB Connection Error:", error);
+ 
+    process.exit(1); // Uygulamayı hata durumunda sonlandırma
   }
 };
 
@@ -32,6 +38,8 @@ app.use("/api/products", productRoute);
 app.use("/api/bills", billRoute);
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
+
+
 app.listen(port, () => {
   connect();
   console.log(`Example app listening on port ${port}`);

@@ -3,18 +3,54 @@ import { useEffect, useRef, useState } from "react";
 import Header from "../components/header/index.jsx";
 import { SearchOutlined } from "@ant-design/icons";
 import Highlighter from "react-highlight-words";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons";
+import * as XLSX from 'xlsx';
 const CustomerPage = () => {
   const [billItems, setBillItems] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [searchedColumn, setSearchedColumn] = useState("");
   const searchInput = useRef(null);
+  const [showNotification, setShowNotification] = useState(false);
+  useEffect(() => {
+    const checkTimeAndShowNotification = () => {
+      const currentHour = new Date().getHours();
+      // Saat 18:00'den sonrası için kontrol
+      if (currentHour >= 18) {
+        setShowNotification(true);
+      }
+    };
+
+    // Sayfa yüklendiğinde kontrol et
+    checkTimeAndShowNotification();
+
+    // Her 1 dakikada bir kontrol et
+    const intervalId = setInterval(checkTimeAndShowNotification, 60000);
+
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, []);
 
   const handleSearch = (selectedKeys, confirm, dataIndex) => {
     confirm();
     setSearchText(selectedKeys[0]);
     setSearchedColumn(dataIndex);
   };
+
+  const exportToExcel = () => {
+    const filteredData = billItems.map(({ __v, ...rest }) => rest); // _v sütununu filtrele
+    const worksheet = XLSX.utils.json_to_sheet(filteredData);
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, 'Bills');
+    XLSX.writeFile(workbook, 'bills.xlsx');
+  };
+
+
+
+
+
+
 
   const handleReset = (clearFilters) => {
     clearFilters();
@@ -136,6 +172,10 @@ const CustomerPage = () => {
     };
     getBills();
   }, []);
+
+  const handleIconClick = () => {
+    setShowNotification(false);
+  };
   const columns = [
     {
       title: "Müşteri Adı",
@@ -157,6 +197,8 @@ const CustomerPage = () => {
         return <span>{text.substring(0, 10)}</span>;
       },
     },
+    
+   
   ];
   return (
     <>
@@ -174,6 +216,19 @@ const CustomerPage = () => {
           }}
           rowKey="_id"
         />
+         <div style={{ marginTop: 16, textAlign: 'center' }}>
+          <Button type="primary" onClick={exportToExcel}>
+            Excel'e Aktar
+          </Button>
+        </div>
+        {showNotification && (
+        <div className="fixed bottom-4 right-4 p-4 bg-red-500 text-white border border-red-600 rounded shadow-md">
+         <div className="flex items-center cursor-pointer" onClick={handleIconClick}>
+            <FontAwesomeIcon icon={faExclamationTriangle} className="mr-2" />
+            <p className="text-sm">Rapor alınız!</p>
+          </div>
+        </div>
+      )}
       </div>
     </>
   );
