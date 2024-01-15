@@ -49,3 +49,14 @@ body {
 .menu-link.active {
   @apply !text-[#40a9ff];
 }
+
+body.dark-mode {
+  background-color: #333 !important;
+  color: #fff !important;
+}
+
+/* Add this to style dark mode for specific elements */
+.dark-mode .some-element {
+  background-color: #444; /* Dark background color for this element */
+  color: #fff; /* Light text color for this element */
+}

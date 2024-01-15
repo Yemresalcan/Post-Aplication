@@ -11,6 +11,7 @@ import {
 import {useSelector} from "react-redux";
 import { Link,useLocation ,useNavigate } from "react-router-dom";
 import { Badge, Input, message } from "antd";
+import ThemeSwitch from "../../ThemeSwitch";
 
 const Header = ({ setSearch }) => {
   
@@ -118,6 +119,7 @@ console.log(cart.cartItems.length);
             <span className="md:text-xs text-[10px]">Sepet</span>
           </Link>
         </Badge>
+        <ThemeSwitch />
       </header>
     </div>
   );

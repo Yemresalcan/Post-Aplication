@@ -17,8 +17,9 @@ function App() {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
-
   return (
+    <div className="w-screen h-screen text-black dark:text-white flex flex-col bg-[#ECF2FF] dark:bg-[#000000]">
+
     <BrowserRouter>
       <Routes>
         <Route
@@ -73,7 +74,9 @@ function App() {
         <Route path="/login" element={<Login />} />
       </Routes>
     </BrowserRouter>
+    </div>
   );
+  
 }
 
 export default App;
