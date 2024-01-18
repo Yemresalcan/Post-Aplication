@@ -3,6 +3,7 @@ import CartTotals from "../components/cart/CartTotals";
 import Categories from "../components/categories/Categories";
 import Header from "../components/header/index";
 import Products from "../components/products/products";
+
 const HomePage = () => {
   const [categories, setCategories] = useState([]); 
   const [products, setProducts] = useState([]);
@@ -12,7 +13,10 @@ const HomePage = () => {
   useEffect(() => {
     const getCategories = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/categories/get-all");
+       const res = await fetch(process.env.REACT_APP_API_URL + "/api/categories/get-all");
+
+
+        console.log(process.env.REACT_APP_API_URL+ "/api/categories/get-all")
         const data = await res.json();
         data &&
           setCategories(
@@ -29,7 +33,7 @@ const HomePage = () => {
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/products/get-all");
+        const res = await fetch(process.env.REACT_APP_API_URL + "/api/products/get-all");
         const data = await res.json();
         setProducts(data);
       } catch (error) {

@@ -18,7 +18,7 @@ function App() {
   }, [cart]);
 
   return (
-    <div className="w-screen h-screen text-black dark:text-white flex flex-col bg-[#ECF2FF] dark:bg-[#000000]">
+    <div className="w-screen h-screen text-black dark:text-white flex flex-col bg-[#ECF2FF] dark:bg-[#0D1117]">
 
     <BrowserRouter>
       <Routes>
