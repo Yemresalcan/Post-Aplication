@@ -104,7 +104,7 @@ Bu proje [ISC License](LICENSE) altında lisanslanmıştır.
 
 ---
 
-# 🇬🇧 POS Application System
+# ![United Kingdom](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/gb.png "United Kingdom")  POS Application System
 
 This project is a Point of Sale (POS) application. It was developed using the MERN stack (MongoDB, Express.js, React, and Node.js).
 
