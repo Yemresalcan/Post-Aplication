@@ -2,6 +2,13 @@
 
 Bu proje, bir Point of Sale (POS) uygulamasıdır. MERN stack kullanılarak geliştirilmiştir (MongoDB, Express.js, React ve Node.js).
 
+## 📸 Ekran Görüntüsü
+
+<div align="center">
+  <img src="image/image1.png" alt="POS Application Interface" width="800" />
+</div>
+
+
 ## 📋 Proje Yapısı
 
 Bu proje iki ana kısımdan oluşmaktadır:
@@ -107,6 +114,12 @@ Bu proje [ISC License](LICENSE) altında lisanslanmıştır.
 # 🇬🇧 POS Application System
 
 This project is a Point of Sale (POS) application. It was developed using the MERN stack (MongoDB, Express.js, React, and Node.js).
+
+## 📸 Screenshot
+
+<div align="center">
+  <img src="image/image1.png" alt="POS Application Interface" width="800" />
+</div>
 
 ## 📋 Project Structure
 
