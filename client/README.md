@@ -1,70 +1,209 @@
-# Getting Started with Create React App
+# POS Uygulama Sistemi
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Bu proje, bir Point of Sale (POS) uygulamasıdır. MERN stack kullanılarak geliştirilmiştir (MongoDB, Express.js, React ve Node.js).
 
-## Available Scripts
+## 📋 Özellikler
 
-In the project directory, you can run:
+- Kullanıcı kimlik doğrulama (Kayıt olma ve giriş yapma)
+- Ürün yönetimi
+- Kategori yönetimi
+- Sepet işlemleri
+- Fatura oluşturma ve yönetimi
+- Müşteri yönetimi
+- İstatistik görüntüleme
+- Karanlık/Aydınlık mod desteği
 
-### `npm start`
+## 🚀 Başlangıç
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Ön Koşullar
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Node.js
+- MongoDB
+- npm veya yarn
 
-### `npm test`
+### Kurulum
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Projeyi klonlayın:
+```bash
+git clone https://github.com/[kullanıcı-adınız]/pos-uygulama-sistemi.git
+cd pos-uygulama-sistemi
+```
 
-### `npm run build`
+2. Client için gerekli paketleri yükleyin:
+```bash
+cd client
+npm install
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. API için gerekli paketleri yükleyin:
+```bash
+cd ../api
+npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. API için .env dosyası oluşturun ve MongoDB bağlantı URL'nizi ekleyin:
+```
+MONGO_URI=your_mongodb_connection_string
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Çalıştırma
 
-### `npm run eject`
+#### Backend
+```bash
+cd api
+npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### Frontend
+```bash
+cd client
+npm start
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Uygulama http://localhost:3000 adresinde çalışacaktır.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🧰 Kullanılan Teknolojiler
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Frontend
+- React
+- Redux Toolkit
+- React Router DOM
+- Ant Design & Ant Design Charts
+- Tailwind CSS
+- Font Awesome
+- XLSX (Excel dosyaları için)
 
-## Learn More
+### Backend
+- Express.js
+- MongoDB & Mongoose
+- bcrypt (şifreleme için)
+- dotenv
+- CORS
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🏗️ Proje Yapısı
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+pos-uygulama-sistemi/
+├── api/                    # Backend kodları
+│   ├── models/             # Mongoose modelleri
+│   ├── routes/             # Express rotaları
+│   └── server.js           # Ana Express sunucu
+│
+└── client/                 # Frontend kodları
+    ├── public/             # Statik dosyalar
+    └── src/                # React kaynak kodu
+        ├── components/     # Yeniden kullanılabilir bileşenler
+        ├── pages/          # Sayfa bileşenleri
+        └── redux/          # Redux durum yönetimi
+```
 
-### Code Splitting
+## 📜 Lisans
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Bu proje [ISC License](LICENSE) altında lisanslanmıştır.
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# 🇬🇧 POS Application System
 
-### Making a Progressive Web App
+This project is a Point of Sale (POS) application. It was developed using the MERN stack (MongoDB, Express.js, React, and Node.js).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 📋 Features
 
-### Advanced Configuration
+- User authentication (Registration and Login)
+- Product management
+- Category management
+- Cart operations
+- Invoice creation and management
+- Customer management
+- Statistics display
+- Dark/Light mode support
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 🚀 Getting Started
 
-### Deployment
+### Prerequisites
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Node.js
+- MongoDB
+- npm or yarn
 
-### `npm run build` fails to minify
+### Installation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Clone the project:
+```bash
+git clone https://github.com/[your-username]/pos-application-system.git
+cd pos-application-system
+```
+
+2. Install packages for Client:
+```bash
+cd client
+npm install
+```
+
+3. Install packages for API:
+```bash
+cd ../api
+npm install
+```
+
+4. Create a .env file for the API and add your MongoDB connection URL:
+```
+MONGO_URI=your_mongodb_connection_string
+```
+
+### Running
+
+#### Backend
+```bash
+cd api
+npm start
+```
+
+#### Frontend
+```bash
+cd client
+npm start
+```
+
+The application will run at http://localhost:3000.
+
+## 🧰 Technologies Used
+
+### Frontend
+- React
+- Redux Toolkit
+- React Router DOM
+- Ant Design & Ant Design Charts
+- Tailwind CSS
+- Font Awesome
+- XLSX (for Excel files)
+
+### Backend
+- Express.js
+- MongoDB & Mongoose
+- bcrypt (for encryption)
+- dotenv
+- CORS
+
+## 🏗️ Project Structure
+
+```
+pos-application-system/
+├── api/                    # Backend code
+│   ├── models/             # Mongoose models
+│   ├── routes/             # Express routes
+│   └── server.js           # Main Express server
+│
+└── client/                 # Frontend code
+    ├── public/             # Static files
+    └── src/                # React source code
+        ├── components/     # Reusable components
+        ├── pages/          # Page components
+        └── redux/          # Redux state management
+```
+
+## 📜 License
+
+This project is licensed under the [ISC License](LICENSE).
+
+
